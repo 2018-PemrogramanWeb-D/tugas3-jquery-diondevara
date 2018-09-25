@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<title>Daftar Mahasiswa</title>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+	$(document).ready(function()
+	{
+		$("#myInput").on("keyup", function() 
+		{
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() 
+			{
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+	
+	$(document).ready(function()
+	{
+		$("#button1").click(function()
+		{
+			$("#material").attr(
+			{
+				"href" : "https://id.wikipedia.org/wiki/Institut_Teknologi_Sepuluh_Nopember",
+				"title" : "Wikipedia ITS"
+			});
+		});
+		$("#button2").click(function()
+		{
+			$("#material").attr(
+			{
+				"href" : "https://www.its.ac.id/id/beranda/",
+				"title" : "Web ITS"
+			});
+		});
+	});
+	
+	$(document).ready(function(){
+    $("#button3").click(function()
+	{
+        $("div").animate({left: '250px'});
+    });
+});
+</script> 
+<style>
+	body 
+	{
+		font-family: Times;
+		padding: 10px;
+		
+		background: lightblue url("img_tree.gif") no-repeat fixed center; 
+	}
+	.header 
+	{
+		padding: 30px;
+		text-align: center;
+		background: white;
+		box-sizing: border-box;
+	}
+	
+	table,th,td 
+	{
+		border:1px solid black;
+		border-collapse: collapse;
+		
+	}
+	
+	h1
+	{
+		text-align: center;
+		
+	}
+	h2,h3
+	{
+		text-align: left;
+		
+	}
+	
+	.leftcolumn 
+	{   
+		float: left;
+		width: 75%;
+		box-sizing: border-box;
+	}
+	.rightcolumn 
+	{
+		float: left;
+		width: 25%;
+		padding-left: 20px;
+		box-sizing: border-box;
+	}
+
+	.card 
+	{
+		background-color: white;
+		padding: 20px;
+		margin-top: 20px;
+	}
+
+	.row:after 
+	{
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	.footer
+	{
+		padding: 20px;
+		text-align: left;
+		background: white;
+		margin-top: 20px;
+	}
+
+	.footer1
+	{
+		padding: 20px;
+		text-align: left;
+		background: white;
+		margin-top: 20px;
+	}
+	
+	
+</style>
+</head>
+<body>
+
+<div class="header">
+	<h1>Daftar Mahasiswa</h1>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+		<p>Search</p>
+		<input id="myInput" type="text" placeholder="Search..">
+		<br><br>
+		<table>
+			<thead>
+				<tr>
+					<th style="color:blue">Nama</th>
+					<th style="color:blue">Asal</th>
+					<th style="color:blue">NRP</th>
+				</tr>
+			</thead>
+			<tbody id="myTable">
+				<tr>
+					<td>Budi</td>
+					<td>Bandung</td>
+					<td>05111740000001</td>
+				</tr>
+				<tr>
+					<td>Tono</td>
+					<td>Surabaya</td>
+					<td>05111740000002</td>
+				</tr>
+				<tr>
+					<td>Andi</td>
+					<td>Surabaya</td>
+					<td>05111740000003</td>
+				</tr>
+				<tr>
+					<td>Mulyadi</td>
+					<td>Bekasi</td>
+					<td>05111740000004</td>
+				</tr>
+				<tr>
+					<td>Nurul</td>
+					<td>Jakarta</td>
+					<td>05111740000005</td>
+				</tr>
+				<tr>
+					<td>Joko</td>
+					<td>Malang</td>
+					<td>05111740000006</td>
+				</tr>
+				<tr>
+					<td>Karto</td>
+					<td>Batam</td>
+					<td>05111740000007</td>
+				</tr>
+				<tr>
+					<td>Laras</td>
+					<td>Sidoarjo</td>
+					<td>05111740000008</td>
+				</tr>
+				<tr>
+					<td>Parto</td>
+					<td>Dharma</td>
+					<td>05111740000009</td>
+				</tr>
+				<tr>
+					<td>Winarto</td>
+					<td>Tegal</td>
+					<td>05111740000010</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="footer">
+	<h2><a href="https://www.wikipedia.com" id="material">More Information</a></h2>
+	<button id="button1">Wikipedia</button>
+	<button id="button2">its.ac.id</button>
+	
+	
+</div>
+<button id="button3">Click here</button>
+
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+</body>
+</html>
